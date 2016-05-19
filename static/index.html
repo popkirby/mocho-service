@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>(●・▽・●)</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <style type="text/css">
+      .mocho-header {
+        text-align: center;
+        background-color: #FF9DDD;
+        color: white;
+      }
+
+      .mocho-contents {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="jumbotron mocho-header">
+      <div class="container">
+        <h2>(●・▽・●)</h2>
+      </div>
+    </div>
+    <div class="container mocho-contents">
+      <div class="panel panel-danger">
+        <div class="panel-body" id="generated">
+          終わりだよ〜
+        </div>
+      </div>
+      <button type="button" class="btn btn-default" id="genButton">(●・▽・●)</button>
+      <br>
+      <div id="share">
+        <a  class="twitter-share-button" href="https://twitter.com/intent/tweet">Tweet</a>
+      </div>
+    </div>
+ 
+		<script>window.twttr = (function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0],
+				t = window.twttr || {};
+			if (d.getElementById(id)) return t;
+			js = d.createElement(s);
+			js.id = id;
+			js.src = "https://platform.twitter.com/widgets.js";
+			fjs.parentNode.insertBefore(js, fjs);
+		
+			t._e = [];
+			t.ready = function(f) {
+				t._e.push(f);
+			};
+		
+			return t;
+		}(document, "script", "twitter-wjs"));</script>
+    <script type="text/javascript">
+      $(function() {
+       $('#genButton').click(function() {
+          $.get('/oneline').done(function(genStr) {
+            $('#generated').text(genStr)
+            $('#share').empty()
+            twttr.widgets.createShareButton(
+                location.href,
+                document.getElementById('share'),
+                { text: genStr }
+                )
+          })
+        })
+      })
+    </script></body>
+</html>
+
+    

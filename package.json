@@ -1,0 +1,15 @@
+{
+  "name": "mocho-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "cd mocho && npm install"
+  },
+  "author": "popkirby",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}
